@@ -9,6 +9,8 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var turnLabel: UILabel!
+    
     //First row of grid buttons
     @IBOutlet var a1: UIButton!
     @IBOutlet var a2: UIButton!
