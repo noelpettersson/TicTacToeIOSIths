@@ -8,29 +8,32 @@
 import UIKit
 
 class GameViewController: UIViewController {
-
-    @IBOutlet weak var turnLabel: UILabel!
+    let gameView = GameView()
     
-    //First row of grid buttons
-    @IBOutlet var a1: UIButton!
-    @IBOutlet var a2: UIButton!
-    @IBOutlet var a3: UIButton!
+    var game = Game()
     
-    //Second row of grid buttons
-    @IBOutlet var b1: UIButton!
-    @IBOutlet var b2: UIButton!
-    @IBOutlet var b3: UIButton!
-    
-    //Third row of grid buttons
-    @IBOutlet var c1: UIButton!
-    @IBOutlet var c2: UIButton!
-    @IBOutlet var c3: UIButton!
+    @IBAction func action(_ sender: UIButton) {
+        game.action(sender)
+        
+        print("Pressed")
+        if (!sender.isSelected) {
+            sender.isSelected = true
+            
+            if (game.activePlayer == 1) {
+                gameView.setImageOnBoard(to: game.player1.photo, for: sender)
+            } else {
+                gameView.setImageOnBoard(to: game.player2.photo, for: sender)
+            }
+            
+            if(game.checkForWin() == true) {
+                gameView.resetBoard()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        view.addSubview(gameView)
     }
-    
-
 }
