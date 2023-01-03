@@ -82,8 +82,8 @@
         <!--View Controller-->
         <scene sceneID="ixS-jr-NsV">
             <objects>
-                <viewController id="bpT-dW-Xlb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Euq-Yg-cA7">
+                <viewController id="bpT-dW-Xlb" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Euq-Yg-cA7">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -120,6 +120,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Play"/>
                                 <connections>
+                                    <action selector="startGame:" destination="bpT-dW-Xlb" eventType="touchUpInside" id="Bla-oX-YOr"/>
                                     <segue destination="19y-XD-Sf6" kind="presentation" modalPresentationStyle="fullScreen" id="Zxi-RS-qc7"/>
                                 </connections>
                             </button>
@@ -146,6 +147,10 @@
                             <constraint firstItem="6D4-qy-lM2" firstAttribute="leading" secondItem="Euq-Yg-cA7" secondAttribute="leadingMargin" constant="81" id="w02-JY-jR1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="player1Input" destination="xpp-wF-KgS" id="slS-EX-XuA"/>
+                        <outlet property="player2Input" destination="egK-a3-8W8" id="6Hd-qe-AB4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJU-Xx-JzX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -267,6 +272,12 @@
                                     <constraint firstAttribute="width" secondItem="s7b-FD-eQ5" secondAttribute="height" multiplier="1:1" constant="1" id="l5u-3t-3Nz"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player 1's Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nga-sf-soz">
+                                <rect key="frame" x="130.66666666666666" y="118" width="168.99999999999997" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OYn-b0-19T"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -275,11 +286,16 @@
                             <constraint firstItem="s7b-FD-eQ5" firstAttribute="centerX" secondItem="828-RS-8dx" secondAttribute="centerX" id="Fl1-zN-mVP"/>
                             <constraint firstItem="s7b-FD-eQ5" firstAttribute="width" secondItem="828-RS-8dx" secondAttribute="width" multiplier="0.9" id="QWg-tS-vwo"/>
                             <constraint firstItem="828-RS-8dx" firstAttribute="leading" secondItem="b8k-et-hh2" secondAttribute="leading" id="Qer-c3-vfx"/>
+                            <constraint firstItem="Nga-sf-soz" firstAttribute="centerX" secondItem="b8k-et-hh2" secondAttribute="centerX" id="fL5-dg-4o6"/>
                             <constraint firstAttribute="trailing" secondItem="828-RS-8dx" secondAttribute="trailing" id="hvQ-Xg-nvn"/>
                             <constraint firstItem="828-RS-8dx" firstAttribute="top" secondItem="b8k-et-hh2" secondAttribute="top" id="iQB-If-Le3"/>
+                            <constraint firstItem="828-RS-8dx" firstAttribute="top" secondItem="Nga-sf-soz" secondAttribute="bottom" constant="-148" id="ipI-hw-xdl"/>
                             <constraint firstAttribute="bottom" secondItem="828-RS-8dx" secondAttribute="bottom" id="mVj-qR-aq0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="turnLbl" destination="Nga-sf-soz" id="ROd-mj-xMi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRl-d0-SBv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

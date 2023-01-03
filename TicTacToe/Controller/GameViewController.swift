@@ -12,6 +12,8 @@ class GameViewController: UIViewController {
     
     var game = Game()
     
+    @IBOutlet weak var turnLbl: UILabel!
+    
     @IBAction func action(_ sender: UIButton) {
         game.action(sender)
         
@@ -20,12 +22,18 @@ class GameViewController: UIViewController {
             sender.isSelected = true
             
             if (game.activePlayer == 1) {
+                turnLbl.text = game.player1.name
                 gameView.setImageOnBoard(to: game.player1.photo, for: sender)
             } else {
+                turnLbl.text = game.player2.name
                 gameView.setImageOnBoard(to: game.player2.photo, for: sender)
             }
             
             if(game.checkForWin() == true) {
+                gameView.resetBoard()
+            }  
+
+            if(game.checkForDraw() == true) {
                 gameView.resetBoard()
             }
         }
@@ -35,5 +43,6 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.addSubview(gameView)
+        turnLbl.text = game.player1.name
     }
 }

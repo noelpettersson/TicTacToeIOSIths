@@ -16,7 +16,7 @@ struct Player {
 }
 
 struct Game {
-    var count = 1
+    var count = 0
     var activePlayer = 1 // Cross
     var gameState = [0, 0, 0, 0, 0, 0, 0, 0, 0]
     var gameIsActive = true
@@ -36,8 +36,6 @@ struct Game {
         photo: "nought.jpg"
     )
     
-    var viewController: GameViewController?
-    
     mutating func resetGame() {
         
             print("Reset game")
@@ -50,9 +48,21 @@ struct Game {
 
             // Set the game to active
             gameIsActive = true
+
+            // Reset the count
+            count = 0
         
         }
     
+    mutating func checkForDraw() -> Bool {
+        if count == 9 && !checkForWin() {
+          resetGame()
+          return true
+        }
+        return false
+}
+
+
     mutating func checkForWin() -> Bool {
         var isWin: Bool = false
 
@@ -83,6 +93,7 @@ struct Game {
     }
     
     mutating func action(_ sender: AnyObject) {
+        count += 1
         if (gameState[sender.tag-1] == 0 && gameIsActive == true) {
             gameState[sender.tag-1] = activePlayer
             if (activePlayer == 1) {
