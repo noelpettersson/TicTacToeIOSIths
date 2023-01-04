@@ -8,23 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var game = Game()
+    
     
     @IBOutlet weak var player1Input: UITextField!
     @IBOutlet weak var player2Input: UITextField!
     
-    var player1Name: String?
-    var player2Name: String?
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+           super.viewDidLoad()
+           
+       }
 
-    @IBAction func startGame(_ sender: Any) {
-        print()
-        game.player1.name = player1Input.text ?? "player 1"
-        game.player2.name = player2Input.text ?? "player 2"
-    }
-}
-
+       @IBAction func startGame(_ sender: Any) {
+           player1.name = player1Input.text ?? "Player 1"
+           player2.name = player2Input.text ?? "Player 2"
+           dismiss(animated: true, completion: nil)
+           transitionToGameView()
+       }
+       
+       func transitionToGameView() {
+           let gameViewController = GameViewController()
+           present(gameViewController, animated: true, completion: nil)
+       }
+   }

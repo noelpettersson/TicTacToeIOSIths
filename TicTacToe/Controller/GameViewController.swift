@@ -22,11 +22,11 @@ class GameViewController: UIViewController {
             sender.isSelected = true
             
             if (game.activePlayer == 1) {
-                turnLbl.text = game.player1.name
-                gameView.setImageOnBoard(to: game.player1.photo, for: sender)
+                turnLbl.text = player1.name
+                gameView.setImageOnBoard(to: player1.photo, for: sender)
             } else {
-                turnLbl.text = game.player2.name
-                gameView.setImageOnBoard(to: game.player2.photo, for: sender)
+                turnLbl.text = player2.name
+                gameView.setImageOnBoard(to: player2.photo, for: sender)
             }
             
             if(game.checkForWin() == true) {
@@ -43,6 +43,6 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.addSubview(gameView)
-        turnLbl.text = game.player1.name
+        turnLbl.text = "Go!"
     }
 }
