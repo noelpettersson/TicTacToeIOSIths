@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var turnLbl: UILabel!
     
+    
     func handleAIMove() {
         game.count += 1
         
@@ -28,21 +29,30 @@ class GameViewController: UIViewController {
 
         
         if(game.checkForWin() == true) {
-            gameView.resetBoard()
+            resultAlert(title: "Win!")
         } else {
             game.activePlayer = 1
         }
 
         if(game.checkForDraw() == true) {
-            gameView.resetBoard()
+            resultAlert(title: "Draw!")
         } else {
             game.activePlayer = 1
         }
-        
-        
-        
-        
     }
+    
+    func resultAlert(title: String)
+        {
+            let message = "\(player1.name): \(player1.wins) \n\n\(player2.name): \(player2.wins)"
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .actionSheet) //Showing title and message
+            ac.addAction(UIAlertAction(title: "Reset", style: .default, handler: { (_) in //ResetButton
+                self.game.resetGame() //Clear the board
+                self.gameView.resetBoard()
+            }))
+            self.present(ac, animated: true)
+            
+            
+        }
     
     @IBAction func action(_ sender: UIButton) {
         let index = sender.tag - 1
@@ -66,11 +76,11 @@ class GameViewController: UIViewController {
                 }
                 
                 if(game.checkForWin() == true) {
-                    gameView.resetBoard()
+                    resultAlert(title: "Win!")
                 }
 
                 if(game.checkForDraw() == true) {
-                    gameView.resetBoard()
+                    resultAlert(title: "Draw!")
                 }
             }
         }

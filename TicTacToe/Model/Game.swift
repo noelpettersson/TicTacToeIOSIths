@@ -62,7 +62,7 @@ struct Game {
     
     mutating func checkForDraw() -> Bool {
         if count == 9 && !checkForWin() {
-          resetGame()
+          //resetGame()
           return true
         }
         return false
