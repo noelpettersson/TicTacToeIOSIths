@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1Input: UITextField!
     @IBOutlet weak var player2Input: UITextField!
     
+    @IBOutlet weak var isAISwitch: UISwitch!
     override func viewDidLoad() {
            super.viewDidLoad()
            
@@ -21,7 +22,7 @@ class ViewController: UIViewController {
        @IBAction func startGame(_ sender: Any) {
            player1.name = player1Input.text ?? "Player 1"
            player2.name = player2Input.text ?? "Player 2"
-           dismiss(animated: true, completion: nil)
+           player2.isAI = isAISwitch.isOn
            transitionToGameView()
        }
        

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="BnE-df-z7j">
-                                <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                                <rect key="frame" x="0.0" y="0.0" width="477.66666666666669" height="932"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tic Tac Toe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmo-Uz-Ke2">
                                 <rect key="frame" x="97" y="123" width="241" height="51"/>
@@ -31,7 +31,7 @@
                                 <size key="shadowOffset" width="3" height="4"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MtZ-co-8yq">
-                                <rect key="frame" x="105" y="327" width="217" height="46"/>
+                                <rect key="frame" x="84" y="267" width="263.66666666666669" height="46"/>
                                 <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="9Um-si-7FN"/>
@@ -39,18 +39,8 @@
                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Multiplayer"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6K-Kr-Atg">
-                                <rect key="frame" x="107" y="253" width="217" height="46"/>
-                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="46" id="aib-oq-ubc"/>
-                                </constraints>
-                                <color key="tintColor" systemColor="systemPurpleColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Singleplayer"/>
                                 <connections>
-                                    <segue destination="bpT-dW-Xlb" kind="presentation" modalPresentationStyle="fullScreen" id="7JU-Cf-Jhn"/>
+                                    <segue destination="bpT-dW-Xlb" kind="presentation" modalPresentationStyle="fullScreen" id="Loi-Dr-FKf"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -58,17 +48,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="Vmo-Uz-Ke2" secondAttribute="trailing" constant="93" id="06p-Zg-WRD"/>
-                            <constraint firstItem="g6K-Kr-Atg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="85" id="H2A-za-BTc"/>
                             <constraint firstItem="Vmo-Uz-Ke2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="77" id="PED-FA-Ow6"/>
-                            <constraint firstItem="g6K-Kr-Atg" firstAttribute="leading" secondItem="MtZ-co-8yq" secondAttribute="leading" id="Qd7-E5-aLk"/>
+                            <constraint firstItem="MtZ-co-8yq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ubx-Lj-HEk"/>
                             <constraint firstItem="bfP-O0-WxJ" firstAttribute="trailing" secondItem="BnE-df-z7j" secondAttribute="trailing" id="XE7-BO-wEp"/>
-                            <constraint firstItem="BnE-df-z7j" firstAttribute="centerX" secondItem="g6K-Kr-Atg" secondAttribute="centerX" id="Zme-Va-zvk"/>
-                            <constraint firstItem="g6K-Kr-Atg" firstAttribute="trailing" secondItem="MtZ-co-8yq" secondAttribute="trailing" id="j7g-Jc-yMR"/>
+                            <constraint firstItem="MtZ-co-8yq" firstAttribute="top" secondItem="Vmo-Uz-Ke2" secondAttribute="bottom" constant="86" id="gU8-cN-pw6"/>
                             <constraint firstItem="Vmo-Uz-Ke2" firstAttribute="width" secondItem="BnE-df-z7j" secondAttribute="width" multiplier="0.560465" id="jeJ-S4-u8h"/>
                             <constraint firstItem="BnE-df-z7j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l34-Ls-dkC"/>
                             <constraint firstItem="BnE-df-z7j" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-59" id="lhj-TA-rVk"/>
-                            <constraint firstItem="MtZ-co-8yq" firstAttribute="top" secondItem="g6K-Kr-Atg" secondAttribute="bottom" constant="28" id="lzK-zi-7KB"/>
-                            <constraint firstItem="g6K-Kr-Atg" firstAttribute="top" secondItem="Vmo-Uz-Ke2" secondAttribute="bottom" constant="68" id="nST-2h-hr3"/>
+                            <constraint firstItem="MtZ-co-8yq" firstAttribute="leading" secondItem="bfP-O0-WxJ" secondAttribute="leading" constant="107" id="oYo-Ln-Hae"/>
                             <constraint firstItem="BnE-df-z7j" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="riy-Tm-HfY"/>
                             <constraint firstItem="BnE-df-z7j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="yYj-La-odG"/>
                             <constraint firstItem="Vmo-Uz-Ke2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="75" id="ybZ-Qc-dqI"/>
@@ -83,12 +70,12 @@
         <scene sceneID="ixS-jr-NsV">
             <objects>
                 <viewController id="bpT-dW-Xlb" customClass="ViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="Euq-Yg-cA7">
+                    <view key="view" contentMode="scaleToFill" id="Euq-Yg-cA7">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_3" translatesAutoresizingMaskIntoConstraints="NO" id="vQ2-FU-d0k">
-                                <rect key="frame" x="0.0" y="0.0" width="432" height="932"/>
+                                <rect key="frame" x="0.0" y="0.0" width="435.66666666666669" height="932"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Multiplayer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D4-qy-lM2">
                                 <rect key="frame" x="101" y="151" width="229" height="51"/>
@@ -124,6 +111,9 @@
                                     <segue destination="19y-XD-Sf6" kind="presentation" modalPresentationStyle="fullScreen" id="Zxi-RS-qc7"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qtc-Pc-jtU">
+                                <rect key="frame" x="192" y="505" width="49" height="31"/>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="T93-1U-Xfh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -132,13 +122,17 @@
                             <constraint firstItem="Ui6-0S-6aT" firstAttribute="top" secondItem="egK-a3-8W8" secondAttribute="bottom" constant="36" id="7DH-oQ-Lee"/>
                             <constraint firstItem="vQ2-FU-d0k" firstAttribute="top" secondItem="Euq-Yg-cA7" secondAttribute="top" id="DRX-k0-cI3"/>
                             <constraint firstItem="egK-a3-8W8" firstAttribute="leading" secondItem="Ui6-0S-6aT" secondAttribute="leading" id="FiF-XG-6vE"/>
+                            <constraint firstItem="qtc-Pc-jtU" firstAttribute="centerX" secondItem="vQ2-FU-d0k" secondAttribute="centerX" id="JI2-1K-old"/>
                             <constraint firstItem="6D4-qy-lM2" firstAttribute="leading" secondItem="xpp-wF-KgS" secondAttribute="leading" id="JhF-Lx-Ga8"/>
+                            <constraint firstItem="qtc-Pc-jtU" firstAttribute="top" secondItem="Ui6-0S-6aT" secondAttribute="bottom" constant="46" id="NLq-9E-ZcM"/>
                             <constraint firstItem="xpp-wF-KgS" firstAttribute="trailing" secondItem="egK-a3-8W8" secondAttribute="trailing" id="Whm-46-vk3"/>
                             <constraint firstItem="egK-a3-8W8" firstAttribute="top" secondItem="xpp-wF-KgS" secondAttribute="bottom" constant="36" id="Ytd-Km-DAa"/>
                             <constraint firstItem="xpp-wF-KgS" firstAttribute="leading" secondItem="egK-a3-8W8" secondAttribute="leading" id="bZ9-SL-PQz"/>
                             <constraint firstItem="6D4-qy-lM2" firstAttribute="width" secondItem="vQ2-FU-d0k" secondAttribute="width" multiplier="0.532558" id="eGU-md-INp"/>
                             <constraint firstItem="6D4-qy-lM2" firstAttribute="centerX" secondItem="vQ2-FU-d0k" secondAttribute="centerX" id="gUr-G4-q2S"/>
                             <constraint firstAttribute="bottom" secondItem="vQ2-FU-d0k" secondAttribute="bottom" id="jW5-i3-6zo"/>
+                            <constraint firstItem="qtc-Pc-jtU" firstAttribute="leading" secondItem="T93-1U-Xfh" secondAttribute="leading" constant="192" id="kOn-mh-XDr"/>
+                            <constraint firstItem="T93-1U-Xfh" firstAttribute="trailing" secondItem="qtc-Pc-jtU" secondAttribute="trailing" constant="189" id="lj7-xZ-02a"/>
                             <constraint firstItem="vQ2-FU-d0k" firstAttribute="leading" secondItem="Euq-Yg-cA7" secondAttribute="leading" id="mLM-0D-QM2"/>
                             <constraint firstAttribute="trailing" secondItem="vQ2-FU-d0k" secondAttribute="trailing" id="poy-tZ-GK8"/>
                             <constraint firstItem="6D4-qy-lM2" firstAttribute="trailing" secondItem="xpp-wF-KgS" secondAttribute="trailing" id="t59-8n-5V8"/>
@@ -148,6 +142,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="isAISwitch" destination="qtc-Pc-jtU" id="wDs-8z-V8y"/>
                         <outlet property="player1Input" destination="xpp-wF-KgS" id="slS-EX-XuA"/>
                         <outlet property="player2Input" destination="egK-a3-8W8" id="6Hd-qe-AB4"/>
                     </connections>

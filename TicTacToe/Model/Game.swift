@@ -72,13 +72,13 @@ struct Game {
                 // A winning combination has been found
                 gameIsActive = false
 
-                // Update the score
+                // Update the score for the active player
                 if activePlayer == 1 {
+                    print("Player 1 wins")
                     player1.wins += 1
-                    print(player1.wins)
                 } else {
+                    print("Player 2 wins")
                     player2.wins += 1
-                    print(player2.wins)
                 }
 
                 isWin = true
