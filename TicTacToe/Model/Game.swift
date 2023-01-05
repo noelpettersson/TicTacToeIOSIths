@@ -36,7 +36,7 @@ struct Game {
     var gameIsActive = true
     let winningCombinations: [[Int]] = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
     
-    mutating func resetGame() {
+    mutating func resetGame(winner: Int = 0) {
         
             print("Reset game")
         
@@ -51,6 +51,12 @@ struct Game {
 
             // Reset the count
             count = 0
+        
+            if winner == 1 {
+                player1.wins += 1
+            } else {
+                player2.wins += 1
+            }
         
         }
     
@@ -73,20 +79,15 @@ struct Game {
                 gameIsActive = false
 
                 // Update the score for the active player
-                if activePlayer == 1 {
-                    print("Player 1 wins")
-                    player1.wins += 1
-                } else {
-                    print("Player 2 wins")
-                    player2.wins += 1
-                }
+                resetGame(winner: gameState[combination[0]])
 
                 isWin = true
             }
         }
 
         if isWin {
-            resetGame()
+            print("Player 1: \(player1.wins)")
+            print("Player 2: \(player2.wins)" )
         }
 
         return isWin
